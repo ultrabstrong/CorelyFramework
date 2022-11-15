@@ -1,0 +1,48 @@
+﻿@model BusinessLayer.RentalReference
+<div class="mt-2 avoid-break">
+    <!-- Add rental reference -->
+    <div class="row d-flex align-items-center @(Model.AllowElectiveRequire ? "" : "d-none") ">
+        @Html.Label(Model?.ElectiveRequireDisplay ?? "", htmlAttributes: new { @class = "h6 col-auto" })
+        <div class="col-@ViewBag.colsize-1 ">
+            @Html.EnumDropDownListFor(model => model.ElectiveRequireValue, "-", new { @visibletogglefor = nameof(BusinessLayer.RentalReference), @class = "yesno_visible_toggle form-control" })
+        </div>
+        @Html.ValidationMessageFor(model => model.ElectiveRequireValue, "", new { @class = "col-auto col-form-label text-danger " })
+    </div>
+    <div id="@nameof(BusinessLayer.RentalReference)" @(Model.ElectiveRequireValue == BusinessLayer.Enums.YesNo.Yes ? "" : "style=display:none;") class="container border rounded bg-light p-2 mt-2">
+        <p>@Html.Label(Model.DisplayName)</p>
+        <div class="row ">
+            <!-- Landlord Name -->
+            <div class="form-group col-@ViewBag.colsize-8">
+                @Html.LabelFor(model => model.LandlordName)
+                @Html.EditorFor(model => model.LandlordName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LandlordName, "", new { @class = "text-danger" })
+            </div>
+            <!-- Landlord Phone -->
+            <div class="form-group col-@ViewBag.colsize-4">
+                @Html.LabelFor(model => model.LandlordPhoneNum)
+                @Html.EditorFor(model => model.LandlordPhoneNum, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LandlordPhoneNum, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row ">
+            <!-- Start -->
+            <div class="form-group col-@ViewBag.colsize-4">
+                @Html.LabelFor(model => model.Start)
+                @Html.EditorFor(model => model.Start, new { htmlAttributes = new { @class = "form-control datepicker", placeholder = "Enter date" } })
+                @Html.ValidationMessageFor(model => model.Start, "", new { @class = "text-danger" })
+            </div>
+            <!-- End -->
+            <div class="form-group col-@ViewBag.colsize-4">
+                @Html.LabelFor(model => model.End)
+                @Html.EditorFor(model => model.End, new { htmlAttributes = new { @class = "form-control datepicker", placeholder = "Enter date" } })
+                @Html.ValidationMessageFor(model => model.End, "", new { @class = "text-danger" })
+            </div>
+            <!-- Reason for moving-->
+            <div class="form-group col-@ViewBag.colsize-4">
+                @Html.LabelFor(model => model.ReasonForMoving)
+                @Html.EditorFor(model => model.ReasonForMoving, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ReasonForMoving, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+</div>

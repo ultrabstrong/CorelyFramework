@@ -1,0 +1,59 @@
+﻿@model BusinessLayer.PersonalInfo
+<div class="avoid-break">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="row ">
+        <!-- First Name -->
+        <div class="col-@ViewBag.colsize-4">
+            @Html.LabelFor(model => model.FirstName)
+            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Middle Name-->
+        <div class="col-@ViewBag.colsize-4">
+            @Html.LabelFor(model => model.MiddleName)
+            @Html.EditorFor(model => model.MiddleName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MiddleName, "", new { @class = "text-danger" })
+        </div>
+        <!-- Last Name -->
+        <div class="col-@ViewBag.colsize-4">
+            @Html.LabelFor(model => model.LastName)
+            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row ">
+        <!-- Driver License -->
+        <div class="col-@ViewBag.colsize-4">
+            @Html.LabelFor(model => model.DriverLicense)
+            @Html.EditorFor(model => model.DriverLicense, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DriverLicense, "", new { @class = "text-danger" })
+        </div>
+        <!-- DL State -->
+        <div class="col-@ViewBag.colsize-4">
+            @Html.LabelFor(model => model.DriverLicenseStateOfIssue)
+            @Html.EditorFor(model => model.DriverLicenseStateOfIssue, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DriverLicenseStateOfIssue, "", new { @class = "text-danger" })
+        </div>
+        <!-- SSN -->
+        <div class="col-@ViewBag.colsize-4">
+            @Html.LabelFor(model => model.SSN)
+            @Html.EditorFor(model => model.SSN, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SSN, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row ">
+        <!-- Phone -->
+        <div class="col-@ViewBag.colsize-4">
+            @Html.LabelFor(model => model.PhoneNum)
+            @Html.EditorFor(model => model.PhoneNum, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PhoneNum, "", new { @class = "text-danger" })
+        </div>
+        <!-- Email -->
+        <div class="col-@ViewBag.colsize-8">
+            @Html.LabelFor(model => model.Email)
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+</div>

@@ -1,0 +1,189 @@
+﻿@using ApartmentWeb.Controllers
+@using KelleyUtilities.Core;
+@using rm = Resources.Website.Home;
+@{
+    ViewBag.Title = rm.TENANTINFO;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Navigation bar -->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            @Html.ActionLink(rm.HOME, nameof(HomeController.Index), HomeController.Name)
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">@rm.TENANTINFO</li>
+    </ol>
+</nav>
+<div class="accordion" id="tenantInfoAccordion">
+    <div class="accordion-item border rounded">
+        <!-- Services Header -->
+        <div class="accordion-header" id="headingOne">
+            <button class="accordion-button bg-light text-black p-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <h5>@rm.TENANTINFO_SERVICES</h5>
+            </button>
+        </div>
+        <!-- Services Body -->
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+            <div class="row col-12 mx-0 mt-2">
+                <!-- Electrical -->
+                <div class="col-sm my-2">
+                    <div class="card ">
+                        <div class="card-header">
+                            <h5 class="card-title">@rm.TENANTINFO_ELECTRICAL</h5>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Northwestern Energy</h5>
+                            <p class="card-text">
+                                888-467-2669<br />
+                                <a href="www.northwesternenergy.com" class="card-text">www.northwesternenergy.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Phone / TV / Internet -->
+                <div class="col-sm my-2">
+                    <div class="card ">
+                        <div class="card-header">
+                            <h5 class="card-title">@rm.TENANTINFO_INTERNET</h5>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Charter Spectrum</h5>
+                            <p class="card-text">
+                                888-406-7063<br />
+                                <a href="www.spectrum.com" class="card-text">www.spectrum.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Post Office -->
+                <div class="col-sm my-2">
+                    <div class="card ">
+                        <div class="card-header">
+                            <h5 class="card-title">@rm.TENANTINFO_POSTOFFICE</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                @Html.Raw(Html.Encode(@Shared.Configuration.SiteDetails.PostOfficeAddress).Replace("\n", "<br />"))<br />
+                                406-586-1508
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row col-12 mx-0">
+                <!-- Gas -->
+                <div class="col-sm my-2">
+                    <div class="card ">
+                        <div class="card-header">
+                            <h5 class="card-title">@rm.TENANTINFO_GAS</h5>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Northwestern Energy</h5>
+                            <p class="card-text">
+                                888-467-2669<br />
+                                <a href="www.northwesternenergy.com" class="card-text">www.northwesternenergy.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Newspaper -->
+                <div class="col-sm my-2">
+                    <div class="card ">
+                        <div class="card-header">
+                            <h5 class="card-title">@rm.TENANTINFO_NEWSPAPER</h5>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Bozeman Chronicle</h5>
+                            <p class="card-text">
+                                406-587-4506<br />
+                                <a href="www.bozemandailychronicle.com" class="card-text">www.bozemandailychronicle.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                @if (Shared.Configuration.SiteDetails.ShowTrash)
+                {
+                    <!-- Trash -->
+                    <div class="col-sm my-2">
+                        <div class="card ">
+                            <div class="card-header">
+                                <h5 class="card-title">@rm.TENANTINFO_TRASH</h5>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Republic Services</h5>
+                                <p class="card-text">
+                                    406-586-0606<br />
+                                    <a href="https://www.republicservices.com/" class="card-text">www.republicservices.com/</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="row col-12 mx-0 mb-2">
+                <!-- City of Bozeman -->
+                <div class="col-sm my-2">
+                    <div class="card ">
+                        <div class="card-header">
+                            <h5 class="card-title">@rm.TENANTINFO_CITYOFBZN</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                406-582-3200
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item mt-3 border rounded">
+        <!-- Maintinence Header -->
+        <div class="accordion-header" id="headingTwo">
+            <button class="accordion-button bg-light text-black p-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <h5>@rm.TENANTINFO_MAINTENANCE</h5>
+            </button>
+        </div>
+        <!-- Maintinence Body -->
+        <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo">
+            <div class="row align-items-center m-2">
+                <div class="col-sm-3 text-center">
+                    <a href="@Url.Action(nameof(HomeController.MaintenanceRequest), HomeController.Name)" class="btn btn-primary ms-auto">@rm.MAINTENANCE_REQUEST_SUBMIT_ONLINE</a>
+                </div>
+                <div class="col-sm-4 text-center">
+                    <p class="m-0">OR</p>
+                </div>
+                <div class="col-sm-5">
+                    <p class="m-0">
+                        Contact us directly for maintenance<br />
+                        Send written requests to @Shared.Configuration.SiteDetails.Address<br />
+                        In event of an emergency maintenance request, call @Shared.Configuration.SiteDetails.PhoneNumber
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    @if (Shared.Configuration.SiteDetails.TenantInfoDocs != null && Shared.Configuration.SiteDetails.TenantInfoDocs.Count > 0)
+    {
+        <div class="accordion-item mt-3 border rounded">
+            <!-- Documents Header -->
+            <div class="accordion-header" id="headingThree">
+                <button class="accordion-button bg-light text-black p-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                    <h5>@rm.TENANTINFO_DOCS</h5>
+                </button>
+            </div>
+            <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree">
+                <ul class="list-group">
+                    @foreach (NamedValue nv in Shared.Configuration.SiteDetails.TenantInfoDocs)
+                    {
+                        <li class="list-group-item list-group-item-action">
+                            <a class="col-@ViewBag.colsize-12" href="~/data/@nv.Value" download="@nv.Value">
+                                @nv.Name<span class="badge bg-primary p-1 ms-2">@nv.Value</span>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    }
+</div>

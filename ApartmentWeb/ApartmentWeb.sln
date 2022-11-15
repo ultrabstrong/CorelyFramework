@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApartmentWeb", "ApartmentWeb\ApartmentWeb.csproj", "{389B9807-39E2-4401-83B9-A209601A8039}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLayer", "BusinessLayer\BusinessLayer.csproj", "{F9B906FB-3672-4312-AEB4-41FCCE66097C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources", "Resources\Resources.csproj", "{5C96E402-BE19-4080-AF93-21F5709AD18D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonVersion", "CommonVersion", "{FF0C56D2-C279-4148-967B-691EF91C55FA}"
+	ProjectSection(SolutionItems) = preProject
+		CommonAssemblyFileVersion.cs = CommonAssemblyFileVersion.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{58B6A762-C8B0-44AF-911D-802D854783E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{389B9807-39E2-4401-83B9-A209601A8039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{389B9807-39E2-4401-83B9-A209601A8039}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{389B9807-39E2-4401-83B9-A209601A8039}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{389B9807-39E2-4401-83B9-A209601A8039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9B906FB-3672-4312-AEB4-41FCCE66097C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9B906FB-3672-4312-AEB4-41FCCE66097C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9B906FB-3672-4312-AEB4-41FCCE66097C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9B906FB-3672-4312-AEB4-41FCCE66097C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C96E402-BE19-4080-AF93-21F5709AD18D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C96E402-BE19-4080-AF93-21F5709AD18D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C96E402-BE19-4080-AF93-21F5709AD18D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C96E402-BE19-4080-AF93-21F5709AD18D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58B6A762-C8B0-44AF-911D-802D854783E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58B6A762-C8B0-44AF-911D-802D854783E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58B6A762-C8B0-44AF-911D-802D854783E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58B6A762-C8B0-44AF-911D-802D854783E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A89334B-50A1-4E6F-8025-C71A6DC06216}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/brandonstrong
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BusinessLayer\\BusinessLayer.csproj
+		SccProjectName1 = BusinessLayer
+		SccLocalPath1 = BusinessLayer
+		SccProjectUniqueName2 = Resources\\Resources.csproj
+		SccProjectName2 = Resources
+		SccLocalPath2 = Resources
+		SccProjectUniqueName3 = ConsoleTest\\ConsoleTest.csproj
+		SccProjectName3 = ConsoleTest
+		SccLocalPath3 = ConsoleTest
+		SccProjectUniqueName4 = ApartmentWeb\\ApartmentWeb.csproj
+		SccProjectName4 = ApartmentWeb
+		SccLocalPath4 = ApartmentWeb
+	EndGlobalSection
+EndGlobal

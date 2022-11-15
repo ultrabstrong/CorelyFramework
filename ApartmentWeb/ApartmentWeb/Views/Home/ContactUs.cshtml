@@ -1,0 +1,51 @@
+﻿@using ApartmentWeb.Controllers
+@using rm = Resources.Website.Home
+@{
+    ViewBag.Title = rm.CONTACTUS;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            @Html.ActionLink(rm.HOME, nameof(HomeController.Index), HomeController.Name)
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">@rm.CONTACTUS</li>
+    </ol>
+</nav>
+<div class="accordion" id="contactAccordion">
+    <div class="accordion-item border rounded">
+        <!-- Business Hours Header -->
+        <div class="accordion-header" id="headingOne">
+            <button class="accordion-button bg-light text-black p-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <h5>@rm.CONTACTUS_HOURS_HEAD</h5>
+            </button>
+        </div>
+        <!-- Business Hours Body -->
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+            <p class="m-3">
+                @rm.CONTACTUS_HOURS_DESC<br /><br />
+                Monday - Saturday 8:00AM - 5:00 PM<br />
+                Sunday - Closed<br /><br />
+                Closed on all national holidays
+            </p>
+        </div>
+    </div>
+    <div class="accordion-item mt-3 border rounded">
+
+        <div class="accordion-header" id="headingTwo">
+            <!-- Contact Information-->
+            <button class="accordion-button bg-light text-black p-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                <h5>@rm.CONTACTUS_INFO_HEAD</h5>
+            </button>
+        </div>
+        <!-- Contact Information Hours Body -->
+        <div id="collapseTwo" class="accordion-collapse collapse show" aria-labelledby="headingTwo">
+            <p class="m-3">
+                @rm.CONTACTUS_INFO_DESC1 @Shared.Configuration.SiteDetails.PhoneNumber<br />
+                @rm.CONTACTUS_INFO_DESC2 <a href="mailto:@Shared.Configuration.SiteDetails?.EmailAddress">@Shared.Configuration.SiteDetails.EmailAddress</a><br />
+                @rm.CONTACTUS_INFO_DESC3  @Shared.Configuration.SiteDetails.Address
+            </p>
+        </div>
+    </div>
+</div>

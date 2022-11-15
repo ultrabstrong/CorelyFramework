@@ -1,0 +1,35 @@
+﻿
+@using ApartmentWeb.Controllers
+@using rm = Resources.Website.DownloadApplication
+@{
+    ViewBag.Title = rm.APPLY;
+}
+<!-- Navigation bar -->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            @Html.ActionLink(rm.HOME, nameof(HomeController.Index), HomeController.Name)
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">@rm.APPLY</li>
+    </ol>
+</nav>
+<!-- Application card -->
+<div class="col-sm my-3">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">@rm.APPLY</h5>
+        </div>
+        <div class="card-body row">
+            <div class="col-md-12 text-center mt-3 mb-3">
+                <a href="~/data/application.pdf" download="application.pdf" class="btn btn-primary">@rm.APPLY_CLICKTODOWNLOAD</a>
+            </div>
+            <div class="col-md-12 text-center mt-3 mb-3">
+                <h5>@rm.APPLY_INSTRUCTIONS</h5>
+                <h4>@rm.APPLY_DONTFORGETSAVE</h4>
+            </div>
+            <div class="col-md-12 text-center mt-3 mb-3">
+                <p>@rm.APPLY_EMAILTO <a href="mailto:@Shared.Configuration.SiteDetails?.EmailAddress">@Shared.Configuration.SiteDetails.EmailAddress</a></p>
+            </div>
+        </div>
+    </div>
+</div>

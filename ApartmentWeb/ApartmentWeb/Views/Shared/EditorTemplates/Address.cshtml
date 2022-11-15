@@ -1,0 +1,28 @@
+﻿@model BusinessLayer.Address
+
+<div class="row avoid-break">
+    <!-- Street -->
+    <div class="col-@ViewBag.colsize-4">
+        @Html.LabelFor(model => model.Street)
+        @Html.EditorFor(model => model.Street, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Street, "", new { @class = "text-danger" })
+    </div>
+    <!-- City -->
+    <div class="col-@ViewBag.colsize-4">
+        @Html.LabelFor(model => model.City)
+        @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+    </div>
+    <!-- State -->
+    <div class="col-@ViewBag.colsize-2">
+        @Html.LabelFor(model => model.State)
+        @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+    </div>
+    <!-- Zip -->
+    <div class="col-@ViewBag.colsize-2">
+        @Html.LabelFor(model => model.Zip)
+        @Html.EditorFor(model => model.Zip, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Zip, "", new { @class = "text-danger" })
+    </div>
+</div>

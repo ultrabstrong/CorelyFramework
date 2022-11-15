@@ -1,0 +1,77 @@
+﻿@model BusinessLayer.EmploymentInfo
+<div class="mt-2 avoid-break">
+    <!-- Consider Other Income -->
+    <div class="row d-flex align-items-center @(Model.AllowElectiveRequire ? "" : "d-none")">
+        @Html.Label(Model.ElectiveRequireDisplay, htmlAttributes: new { @class = "h6 col-auto" })
+        <div class="col-@ViewBag.colsize-1 ">
+            @Html.EnumDropDownListFor(model => model.ElectiveRequireValue, "-", new { @visibletogglefor = nameof(BusinessLayer.EmploymentInfo), @class = "yesno_visible_toggle form-control" })
+        </div>
+        @Html.ValidationMessageFor(model => model.ElectiveRequireValue, "", new { @class = "col-auto text-danger " })
+    </div>
+    <div id="@nameof(BusinessLayer.EmploymentInfo)" @(Model.ElectiveRequireValue == BusinessLayer.Enums.YesNo.Yes ? "" : "style=display:none;") class="container border rounded bg-light p-2 mt-2">
+        <p>@Html.Label(Model.DisplayName)</p>
+        <div class="row d-flex align-items-center">
+            <!-- Permenant Position -->
+            @Html.LabelFor(model => model.IsPermenant, htmlAttributes: new { @class = "col-auto" })
+            <div class="col-@ViewBag.colsize-1 ">
+                @Html.EnumDropDownListFor(model => model.IsPermenant, "-", new { @visibletogglefor = nameof(Model.IsPermenant), @class = "yesno_visible_toggle form-control" })
+            </div>
+            @Html.ValidationMessageFor(model => model.IsPermenant, "", new { @class = "col-auto text-danger " })
+        </div>
+        <div class="row ">
+            <!-- Company -->
+            <div class="form-group col-@ViewBag.colsize-4">
+                @Html.LabelFor(model => model.Company)
+                @Html.EditorFor(model => model.Company, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Company, "", new { @class = "text-danger" })
+            </div>
+            <!-- Contact Name -->
+            <div class="form-group col-@ViewBag.colsize-4">
+                @Html.LabelFor(model => model.ContactName)
+                @Html.EditorFor(model => model.ContactName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ContactName, "", new { @class = "text-danger" })
+            </div>
+            <!-- Contact Phone -->
+            <div class="form-group col-@ViewBag.colsize-4">
+                @Html.LabelFor(model => model.ContactPhone)
+                @Html.EditorFor(model => model.ContactPhone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ContactPhone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row ">
+            <!-- Employement Length -->
+            <div class="form-group col-@ViewBag.colsize-3">
+                @Html.LabelFor(model => model.EmploymentLength)
+                @Html.EditorFor(model => model.EmploymentLength, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmploymentLength, "", new { @class = "text-danger" })
+            </div>
+            <!-- Wage Type -->
+            <div class="form-group col-@ViewBag.colsize-2">
+                @Html.LabelFor(model => model.WageType)
+                <div class="input-group">
+                    @Html.EnumDropDownListFor(model => model.WageType, "-", new { @class = "form-control" })
+                </div>
+                @Html.ValidationMessageFor(model => model.WageType, "", new { @class = "text-danger" })
+            </div>
+            <!-- Wage -->
+            <div class="form-group col-@ViewBag.colsize-3">
+                @Html.LabelFor(model => model.Wage)
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">$</div>
+                    </div>
+                    @Html.EditorFor(model => model.Wage, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                @Html.ValidationMessageFor(model => model.Wage, "", new { @class = "text-danger" })
+
+            </div>
+            <!-- Hours per week -->
+            <div class="form-group col-@ViewBag.colsize-4">
+                @Html.LabelFor(model => model.HoursPerWeek)
+                @Html.EditorFor(model => model.HoursPerWeek, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.HoursPerWeek, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,96 @@
+﻿
+@model BusinessLayer.MaintenanceRequest
+@using ApartmentWeb.Controllers
+@using rm = Resources.Website.Home;
+@{
+    ViewBag.colsize = "sm";
+    ViewBag.Title = rm.MAINTENANCE_REQUEST;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Navigation bar -->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            @Html.ActionLink(rm.HOME, nameof(HomeController.Index), HomeController.Name)
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">@rm.MAINTENANCE_REQUEST</li>
+    </ol>
+</nav>
+<!-- Maintenance Header -->
+<div class="card col-8 offset-2">
+    <div class="card-header">
+        <h5>@rm.MAINTENANCE_REQUEST</h5>
+    </div>
+    <!-- Maintenance Body -->
+    <div class="card-body row">
+        @using (Html.BeginForm(nameof(HomeController.SubmitMaintenanceRequest), HomeController.Name, FormMethod.Post, new { @id = "application_form" }))
+        {
+            @Html.AntiForgeryToken()
+            <!-- Display errors -->
+            if (ViewBag.Errors == true)
+            {
+                @Html.Label(rm.RESOLVE_ERRORS, htmlAttributes: new { @class = "h6 col-auto mt-2" })
+                @Html.ValidationSummary(false)
+                ViewBag.Errors = false;
+            }
+            <!-- Rental Address -->
+            <div>
+                @Html.LabelFor(model => model.RentalAddress)
+                @Html.EditorFor(model => model.RentalAddress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.RentalAddress, "", new { @class = "text-danger" })
+            </div>
+            <div class="row mt-1">
+                <!-- First Name -->
+                <div class="col-@ViewBag.colsize-6">
+                    @Html.LabelFor(model => model.FirstName)
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                </div>
+                <!-- Last Name -->
+                <div class="col-@ViewBag.colsize-6">
+                    @Html.LabelFor(model => model.LastName)
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="row mt-1">
+                <!-- Email -->
+                <div class="col-@ViewBag.colsize-6">
+                    @Html.LabelFor(model => model.Email)
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+                <!-- Phone -->
+                <div class="col-@ViewBag.colsize-6">
+                    @Html.LabelFor(model => model.Phone)
+                    @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <!-- Description -->
+            <div class="mt-1">
+                @Html.LabelFor(model => model.Description)
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+            <!-- Submit button -->
+            if (ViewBag.inlinecss == null)
+            {
+                <div class="row">
+                    <input type="submit" value="Submit" class="btn btn-success offset-@ViewBag.colsize-5 mt-3 mb-2 col-@ViewBag.colsize-2" />
+                </div>
+            }
+        }
+    </div>
+</div>
+@if (ViewBag.Errors == true)
+{
+    <!-- Validate if returned from server with errors -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#application_form").valid();
+        });
+    </script>
+}
+

@@ -1,0 +1,54 @@
+﻿@model BusinessLayer.Automobile
+<div class="mt-2 avoid-break">
+    <!-- Has An Automobile -->
+    <div class="row d-flex align-items-center @(Model.AllowElectiveRequire ? "" : "d-none")">
+        @Html.LabelFor(model => model.ElectiveRequireValue, htmlAttributes: new { @class = "h6 col-auto " })
+        <div class="col-@ViewBag.colsize-1 ">
+            @Html.EnumDropDownListFor(model => model.ElectiveRequireValue, "-", new { @visibletogglefor = nameof(BusinessLayer.Automobile), @class = "yesno_visible_toggle form-control" })
+        </div>
+        @Html.ValidationMessageFor(model => model.ElectiveRequireValue, "", new { @class = "col-auto col-form-label text-danger " })
+    </div>
+    <div id="@nameof(BusinessLayer.Automobile)" @(Model.ElectiveRequireValue == BusinessLayer.Enums.YesNo.Yes ? "" : "style=display:none;") class="container border rounded bg-light p-2 mt-2">
+        <p>@Html.Label(Model.DisplayName)</p>
+        <div class="row ">
+            <!-- Make -->
+            <div class="form-group col-@ViewBag.colsize-4">
+                @Html.LabelFor(model => model.Make)
+                @Html.EditorFor(model => model.Make, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Make, "", new { @class = "text-danger" })
+            </div>
+            <!-- Model -->
+            <div class="form-group col-@ViewBag.colsize-4">
+                @Html.LabelFor(model => model.Model)
+                @Html.EditorFor(model => model.Model, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Model, "", new { @class = "text-danger" })
+            </div>
+            <!-- Year -->
+            <div class="form-group col-@ViewBag.colsize-4">
+                @Html.LabelFor(model => model.Year)
+                @Html.EditorFor(model => model.Year, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row ">
+            <!-- State -->
+            <div class="form-group col-@ViewBag.colsize-4">
+                @Html.LabelFor(model => model.State)
+                @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+            </div>
+            <!-- License Num -->
+            <div class="form-group col-@ViewBag.colsize-4">
+                @Html.LabelFor(model => model.LicenseNum)
+                @Html.EditorFor(model => model.LicenseNum, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LicenseNum, "", new { @class = "text-danger" })
+            </div>
+            <!-- Color -->
+            <div class="form-group col-@ViewBag.colsize-4">
+                @Html.LabelFor(model => model.Color)
+                @Html.EditorFor(model => model.Color, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Color, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+</div>

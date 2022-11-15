@@ -1,0 +1,34 @@
+﻿@model BusinessLayer.PersonalReference
+<div class="mt-2 avoid-break">
+    <!-- Add personal reference -->
+    <div class="row d-flex align-items-center @(Model.AllowElectiveRequire ? "" : "d-none") ">
+        @Html.Label(Model.ElectiveRequireDisplay, htmlAttributes: new { @class = "h6 col-auto" })
+        <div class="col-@ViewBag.colsize-1 ">
+            @Html.EnumDropDownListFor(model => model.ElectiveRequireValue, "-", new { @visibletogglefor = nameof(BusinessLayer.PersonalReference), @class = "yesno_visible_toggle form-control" })
+        </div>
+        @Html.ValidationMessageFor(model => model.ElectiveRequireValue, "", new { @class = "col-auto col-form-label text-danger " })
+    </div>
+    <div id="@nameof(BusinessLayer.PersonalReference)" @(Model.ElectiveRequireValue == BusinessLayer.Enums.YesNo.Yes ? "" : "style=display:none;")  class="container border rounded bg-light p-2 mt-2">
+        <p>@Html.Label(Model.DisplayName)</p>
+        <div class="row ">
+            <!-- Name -->
+            <div class="form-group col-@ViewBag.colsize-4">
+                @Html.LabelFor(model => model.Name)
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+            <!-- Relationship -->
+            <div class="form-group col-@ViewBag.colsize-4">
+                @Html.LabelFor(model => model.Relationship)
+                @Html.EditorFor(model => model.Relationship, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Relationship, "", new { @class = "text-danger" })
+            </div>
+            <!-- State -->
+            <div class="form-group col-@ViewBag.colsize-4">
+                @Html.LabelFor(model => model.PhoneNum)
+                @Html.EditorFor(model => model.PhoneNum, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PhoneNum, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+</div>

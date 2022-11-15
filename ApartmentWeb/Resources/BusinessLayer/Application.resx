@@ -1,0 +1,390 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ADDRESS_CITY" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="ADDRESS_STATE" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="ADDRESS_STREET" xml:space="preserve">
+    <value>Street</value>
+  </data>
+  <data name="ADDRESS_ZIP" xml:space="preserve">
+    <value>Zip</value>
+  </data>
+  <data name="APP_ACCOMMODATION" xml:space="preserve">
+    <value>Is there a request for reasonable accommodation?</value>
+  </data>
+  <data name="APP_ACCOMMODATION_DESCRIBE" xml:space="preserve">
+    <value>Please explain</value>
+  </data>
+  <data name="APP_ADDITIONAL_COMMENTS" xml:space="preserve">
+    <value>Additional comments for property manager</value>
+  </data>
+  <data name="APP_ADD_PERSONAL_REF" xml:space="preserve">
+    <value>Add personal reference</value>
+  </data>
+  <data name="APP_ADD_RENT_REF" xml:space="preserve">
+    <value>Add another rental reference</value>
+  </data>
+  <data name="APP_ANTICIPATED_DURATION" xml:space="preserve">
+    <value>How long do you anticipate leasing this dwelling?</value>
+  </data>
+  <data name="APP_ATTEND_COLLEGE" xml:space="preserve">
+    <value>Do you currently attend college?</value>
+  </data>
+  <data name="APP_AUTOMOBILE" xml:space="preserve">
+    <value>What kind of vehicle do you own?</value>
+  </data>
+  <data name="APP_CERT_AND_AUTH" xml:space="preserve">
+    <value>Do you agree to the following?</value>
+  </data>
+  <data name="APP_COLLEGE_GRADUATE" xml:space="preserve">
+    <value>When do you plan to graduate?</value>
+  </data>
+  <data name="APP_COLLEGE_YEARS" xml:space="preserve">
+    <value>How many years have you attended?</value>
+  </data>
+  <data name="APP_CONSIDER_OTHER_INCOME" xml:space="preserve">
+    <value>Is there income from another job you are currently employed at that you would like considered?</value>
+  </data>
+  <data name="APP_CRIMINAL_RECORD" xml:space="preserve">
+    <value>Please explain</value>
+  </data>
+  <data name="APP_CURRENT_RESIDENCE" xml:space="preserve">
+    <value>Two year's rental references preferred. Please list your actual landlord, property manager, or RA.</value>
+  </data>
+  <data name="APP_DRINKERS" xml:space="preserve">
+    <value>Do any of the people that will be residing in this unit drink alcohol?</value>
+  </data>
+  <data name="APP_DRINKERS_COUNT" xml:space="preserve">
+    <value>How many individuals drink?</value>
+  </data>
+  <data name="APP_DRINKERS_HOWOFTEN" xml:space="preserve">
+    <value>How Often</value>
+  </data>
+  <data name="APP_EVICTED_EXPLAIN" xml:space="preserve">
+    <value>Please explain</value>
+  </data>
+  <data name="APP_HAS_AUTO" xml:space="preserve">
+    <value>Do you have an automobile?</value>
+  </data>
+  <data name="APP_HAS_BEEN_EVICTED" xml:space="preserve">
+    <value>Has anyone applying ever had their lease agreement terminated or been evicted?</value>
+  </data>
+  <data name="APP_HAS_CRIMINAL_RECORD" xml:space="preserve">
+    <value>Does anyone applying for this apartment have a criminal record?</value>
+  </data>
+  <data name="APP_HAS_JOB" xml:space="preserve">
+    <value>Do you have a job?</value>
+  </data>
+  <data name="APP_HAS_SECOND_JOB" xml:space="preserve">
+    <value>Do you have a second job?</value>
+  </data>
+  <data name="APP_MARIJUANA" xml:space="preserve">
+    <value>Do any applicants have or anticipate obtaining a Medical Marijuana Caregiver or Patient card designation?</value>
+  </data>
+  <data name="APP_NON_HUMAN" xml:space="preserve">
+    <value>Will there be any animals, birds, reptiles, insects, fish, or other non-human life forms living on or in the premises?</value>
+  </data>
+  <data name="APP_NON_HUMAN_DESCRIBE" xml:space="preserve">
+    <value>List and describe each of them</value>
+  </data>
+  <data name="APP_OTHER_APPLICANTS" xml:space="preserve">
+    <value>Who else from your group is applying for this location?</value>
+  </data>
+  <data name="APP_OTHER_INCOME" xml:space="preserve">
+    <value>If no one in the household is employed or you would like other income considered, please explain:</value>
+  </data>
+  <data name="APP_PARENTS_PAY" xml:space="preserve">
+    <value>Do your parents pay some or all of your rent?</value>
+  </data>
+  <data name="APP_PARENT_INFO" xml:space="preserve">
+    <value>Parent Information</value>
+  </data>
+  <data name="APP_PERSONAL_INFO" xml:space="preserve">
+    <value>Tell us about you</value>
+  </data>
+  <data name="APP_PERSONAL_REF_1" xml:space="preserve">
+    <value>Personal reference #1</value>
+  </data>
+  <data name="APP_PERSONAL_REF_2" xml:space="preserve">
+    <value>Personal reference #2</value>
+  </data>
+  <data name="APP_PETS" xml:space="preserve">
+    <value>Will there be any pets living on or in the premesis?</value>
+  </data>
+  <data name="APP_PETS_DESCRIBE" xml:space="preserve">
+    <value>List and describe each pet</value>
+  </data>
+  <data name="APP_PRIMARY_EMPLOYMENT" xml:space="preserve">
+    <value>Tell us about your job</value>
+  </data>
+  <data name="APP_RENTAL_ADDRESS" xml:space="preserve">
+    <value>Rental Address</value>
+  </data>
+  <data name="APP_RENT_REF_1" xml:space="preserve">
+    <value>Rental Reference #2</value>
+  </data>
+  <data name="APP_RENT_REF_2" xml:space="preserve">
+    <value>Rental Reference #3</value>
+  </data>
+  <data name="APP_SECOND_EMPLOYMENT" xml:space="preserve">
+    <value>Tell us about your second job</value>
+  </data>
+  <data name="APP_SMOKERS" xml:space="preserve">
+    <value>Do any of the people that will be residing in this unit smoke anything?</value>
+  </data>
+  <data name="APP_SMOKERS_COUNT" xml:space="preserve">
+    <value>How many individuals smoke?</value>
+  </data>
+  <data name="AUTO_COLOR" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="AUTO_LICENSE_NUM" xml:space="preserve">
+    <value>License Plate #</value>
+  </data>
+  <data name="AUTO_MAKE" xml:space="preserve">
+    <value>Make</value>
+  </data>
+  <data name="AUTO_MODEL" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="AUTO_STATE" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="AUTO_YEAR" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="EMPLOY_COMPANY" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="EMPLOY_CONTACT" xml:space="preserve">
+    <value>Contact Name</value>
+  </data>
+  <data name="EMPLOY_HOURS" xml:space="preserve">
+    <value>How many hours do you work each week?</value>
+  </data>
+  <data name="EMPLOY_LENGTH" xml:space="preserve">
+    <value>Length of employment</value>
+  </data>
+  <data name="EMPLOY_PERMENANT" xml:space="preserve">
+    <value>Is this a permanent position</value>
+  </data>
+  <data name="EMPLOY_PHONE" xml:space="preserve">
+    <value>Contact Phone #</value>
+  </data>
+  <data name="EMPLOY_WAGE" xml:space="preserve">
+    <value>Wage earned</value>
+  </data>
+  <data name="EMPLOY_WAGE_TYPE" xml:space="preserve">
+    <value>Salary or hourly wage?</value>
+  </data>
+  <data name="ENUM_HOWOFTEN_FREQUENT" xml:space="preserve">
+    <value>Frequently</value>
+  </data>
+  <data name="ENUM_HOWOFTEN_MODERATE" xml:space="preserve">
+    <value>Moderately</value>
+  </data>
+  <data name="ENUM_HOWOFTEN_OCCASIONAL" xml:space="preserve">
+    <value>Occasionally</value>
+  </data>
+  <data name="ENUM_WAGE_HOURLY" xml:space="preserve">
+    <value>Hourly</value>
+  </data>
+  <data name="ENUM_WAGE_SALARY" xml:space="preserve">
+    <value>Salary</value>
+  </data>
+  <data name="ENUM_YESNO_NO" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="ENUM_YESNO_SOME" xml:space="preserve">
+    <value>Some</value>
+  </data>
+  <data name="ENUM_YESNO_YES" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="PARENT_ADDRESS" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="PARENT_FIRSTNAME" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="PARENT_LASTNAME" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="PARENT_MIDDLENAME" xml:space="preserve">
+    <value>Middle name</value>
+  </data>
+  <data name="PARENT_PHONENUM" xml:space="preserve">
+    <value>Phone #</value>
+  </data>
+  <data name="PERSONAL_DL_NUM" xml:space="preserve">
+    <value>Driver license #</value>
+  </data>
+  <data name="PERSONAL_DL_STATE" xml:space="preserve">
+    <value>State of issue</value>
+  </data>
+  <data name="PERSONAL_EMAIL" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="PERSONAL_FIRSTNAME" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="PERSONAL_LASTNAME" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="PERSONAL_MIDDLENAME" xml:space="preserve">
+    <value>Middle name</value>
+  </data>
+  <data name="PERSONAL_PHONENUM" xml:space="preserve">
+    <value>Phone #</value>
+  </data>
+  <data name="PERSONAL_SSN" xml:space="preserve">
+    <value>SSN</value>
+  </data>
+  <data name="REF_NAME" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="REF_PHONE" xml:space="preserve">
+    <value>Phone #</value>
+  </data>
+  <data name="REF_RELATION" xml:space="preserve">
+    <value>Relationship</value>
+  </data>
+  <data name="RENTREF_ADDRESS" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="RENTREF_END" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="RENTREF_MOVING_REASON" xml:space="preserve">
+    <value>Reason for moving</value>
+  </data>
+  <data name="RENTREF_NAME" xml:space="preserve">
+    <value>Landlord name</value>
+  </data>
+  <data name="RENTREF_PHONE" xml:space="preserve">
+    <value>Landlord phone #</value>
+  </data>
+  <data name="RENTREF_START" xml:space="preserve">
+    <value>From</value>
+  </data>
+</root>

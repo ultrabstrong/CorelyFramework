@@ -1,0 +1,55 @@
+﻿@using ApartmentWeb.Controllers;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Shared.Configuration.SiteDetails.CompanyShortName - @ViewBag.Title</title>
+    <link rel="icon" type="image/x-icon" href="~/Images/webicon.ico" />
+    <!-- Include styles -->
+    @if (ViewBag.inlinecss != null)
+    {
+        @Html.EmbedCss("~/Content/css")
+    }
+    else
+    {
+        @Styles.Render("~/Content/css")
+    }
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<!-- Include scripts -->
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/jqueryval")
+@Scripts.Render("~/bundles/modal")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+<body>
+    <!-- Header -->
+    <header class="navbar navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink(
+           Shared.Configuration.SiteDetails.CompanyName,
+           nameof(ApartmentWeb.Controllers.HomeController.Index),
+           ApartmentWeb.Controllers.HomeController.Name,
+           new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+    </header>
+    <!-- Main -->
+    <main role="main" class="container">
+        @RenderBody()
+        @{Html.RenderPartial("_NotificationModal");}
+    </main>
+    <!-- Footer -->
+    <footer class="footer navbar">
+        <div class="container">
+            <div class="text-muted">&copy; @DateTime.Now.Year @Shared.Configuration.SiteDetails.CompanyName</div>
+            <div class="text-muted float-right">@Resources.Website.Global.VERSION @Shared.Version</div>
+        </div>
+    </footer>
+</body>
+</html>
+<!-- Clear inlinecss viewbag -->
+@if (ViewBag.inlinecss != null)
+{
+    ViewBag.inlinecss = null;
+}

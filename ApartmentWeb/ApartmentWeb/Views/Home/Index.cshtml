@@ -1,0 +1,82 @@
+﻿@using ApartmentWeb.Controllers
+@using rm = Resources.Website.Home
+@{
+    ViewBag.Title = rm.HOME;
+}
+<!-- Application submitted modal -->
+@if (ViewBag.submitted != null)
+{
+<script>
+        $(document).ready(function () {
+            showModal("Application submitted", "Your application has been submitted and is under review");
+        });
+</script>
+    ViewBag.submitted = null;
+}
+<!-- Mainenance request submitted modal-->
+@if (ViewBag.maintsubmitted != null)
+{
+    <script>
+        $(document).ready(function () {
+            showModal("Maintenance request submitted", "Your maintenance request has been submitted");
+        });
+    </script>
+    ViewBag.maintsubmitted = null;
+}
+<!-- Landing page header -->
+<div class="jumbotron">
+    <div class="row">
+        <h1 class="col-md-6">@Shared.Configuration.SiteDetails.CompanyName</h1>
+        <p class="col-md-6 mt-3">@rm.INDEX_JUMBO_DESC</p>
+    </div>
+</div>
+<!-- Cards container -->
+<div class="row col-12 mx-0">
+    <!-- Apply Online -->
+    <div class="col-sm my-3">
+        <div class="card ">
+            <div class="card-header">
+                <h5 class="card-title">@rm.APPLY</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">@rm.INDEX_APPLY_DESC</p>
+            </div>
+            <div class="card-footer d-flex">
+                <a href="@Url.Action(nameof(HomeController.Apply), HomeController.Name)" class="btn btn-primary">@rm.INDEX_APPLY_LINK</a>
+                @if (Shared.Configuration.SiteDetails.ShowDownloadApplication)
+                {
+                    <a href="@Url.Action(nameof(HomeController.DownloadApplication), HomeController.Name)" class="btn btn-primary ms-auto">@rm.INDEX_APPLY_OFFLINE_LINK</a>
+                }
+            </div>
+        </div>
+    </div>
+    <!-- Contact Us -->
+    <div class="col-sm my-3">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">@rm.TENANTINFO</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">@rm.INDEX_TENANTINFO_DESC</p>
+            </div>
+            <div class="card-footer d-flex">
+                <a href="@Url.Action(nameof(HomeController.TenantInfo), HomeController.Name)" class="btn btn-primary">@rm.INDEX_TENANTINFO_LINK</a>
+                <a href="@Url.Action(nameof(HomeController.MaintenanceRequest), HomeController.Name)" class="btn btn-primary ms-auto">@rm.MAINTENANCE_REQUEST</a>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Us -->
+    <div class="col-sm my-3">
+        <div class="card ">
+            <div class="card-header">
+                <h5 class="card-title">@rm.CONTACTUS</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">@rm.INDEX_CONTACTUS_DESC</p>
+            </div>
+            <div class="card-footer">
+                <a href="@Url.Action(nameof(HomeController.ContactUs), HomeController.Name)" class="btn btn-primary">@rm.INDEX_CONTACTUS_LINK</a>
+            </div>
+        </div>
+    </div>
+</div>

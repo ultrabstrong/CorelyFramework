@@ -1,0 +1,263 @@
+﻿@model BusinessLayer.Application
+@using ApartmentWeb.Controllers
+@using rm = Resources.Website.Application;
+@{
+    ViewBag.colsize = "sm";
+}
+@using (Html.BeginForm(nameof(HomeController.SubmitApplication), HomeController.Name, FormMethod.Post, new { @id = "application_form" }))
+{
+    @Html.AntiForgeryToken()
+    <!-- Display errors -->
+    if (ViewBag.Errors == true)
+    {
+        @Html.Label(rm.APP_RESOLVE_ERRORS, htmlAttributes: new { @class = "h6 col-auto mt-2" })
+        @Html.ValidationSummary(false)
+        ViewBag.Errors = false;
+    }
+    <!-- Rental Address -->
+    <div>
+        @Html.LabelFor(model => model.RentalAddress)
+        @Html.EditorFor(model => model.RentalAddress, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.RentalAddress, "", new { @class = "text-danger" })
+    </div>
+    <!-- Other Applicant -->
+    <div>
+        @Html.LabelFor(model => model.OtherApplicants)
+        @Html.EditorFor(model => model.OtherApplicants, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.OtherApplicants, "", new { @class = "text-danger" })
+    </div>
+    <!-- Personal Info -->
+    @Html.EditorFor(model => model.PersonalInfo)
+    <!-- Primary Employment -->
+    @Html.EditorFor(model => model.PrimaryEmployment)
+    <!-- Secondary Employment -->
+    @Html.EditorFor(model => model.SecondaryEmployment)
+    <!-- Parent Info -->
+    @Html.EditorFor(model => model.ParentInfo)
+    <!-- Consider Other Income -->
+    <div class="avoid-break">
+        <div class="row d-flex align-items-center mt-2">
+            @Html.LabelFor(model => model.ConsiderOtherIncome, htmlAttributes: new { @class = "h6 col-auto" })
+            <div class="col-@ViewBag.colsize-1 ">
+                @Html.EnumDropDownListFor(model => model.ConsiderOtherIncome, "-", new { @visibletogglefor = nameof(Model.OtherIncomeExplain), @class = "yesno_visible_toggle form-control" })
+            </div>
+            @Html.ValidationMessageFor(model => model.ConsiderOtherIncome, "", new { @class = "col-auto text-danger" })
+        </div>
+        <!-- Other Income Explain -->
+        <div id="@nameof(Model.OtherIncomeExplain)" @(Model.ConsiderOtherIncome == BusinessLayer.Enums.YesNo.Yes ? "" : "style=display:none;") class="container">
+            @Html.LabelFor(model => model.OtherIncomeExplain)
+            @Html.EditorFor(model => model.OtherIncomeExplain, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.OtherIncomeExplain, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <!-- Automobile -->
+    @Html.EditorFor(model => model.Automobile)
+    <!-- Current Rental -->
+    @Html.Label(rm.RENTAL_REFERENCE, htmlAttributes: new { @class = "h6 col-auto mt-2" })
+    @Html.EditorFor(model => model.CurrentRental)
+    <!-- Prior rental reference 1 -->
+    @Html.EditorFor(model => model.PriorRentRef1)
+    <!-- Prior rental reference 2 -->
+    @Html.EditorFor(model => model.PriorRentRef2)
+    <!-- Personal Reference 1 -->
+    @Html.EditorFor(model => model.PersonalReference1)
+    <!-- Personal Reference 2 -->
+    @Html.EditorFor(model => model.PersonalReference2)
+    <!-- Anticipated Duration -->
+    <div class="row d-flex align-items-center mt-2">
+        @Html.LabelFor(model => model.AnticipatedDuration, htmlAttributes: new { @class = "col-auto" })
+        <div class="col-@ViewBag.colsize-2">
+            @Html.EditorFor(model => model.AnticipatedDuration, new { htmlAttributes = new { @class = "form-control" } })
+        </div>
+        @Html.ValidationMessageFor(model => model.AnticipatedDuration, "", new { @class = "col-auto text-danger" })
+    </div>
+    <!-- Has Criminal Record -->
+    <div class="avoid-break">
+        <div class="row d-flex align-items-center mt-2">
+            @Html.LabelFor(model => model.HasCriminalRecord, htmlAttributes: new { @class = "col-auto" })
+            <div class="col-@ViewBag.colsize-1">
+                @Html.EnumDropDownListFor(model => model.HasCriminalRecord, "-", new { @visibletogglefor = nameof(Model.HasCriminalRecord), @class = "yesno_visible_toggle form-control" })
+            </div>
+            @Html.ValidationMessageFor(model => model.HasCriminalRecord, "", new { @class = "col-auto text-danger" })
+        </div>
+        <!-- Criminal Record Explain -->
+        <div id="@nameof(Model.HasCriminalRecord)" @(Model.HasCriminalRecord == BusinessLayer.Enums.YesNo.Yes ? "" : "style=display:none;") class="container">
+            @Html.LabelFor(model => model.ExplainCriminalRecord)
+            @Html.EditorFor(model => model.ExplainCriminalRecord, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ExplainCriminalRecord, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <!-- Has Been Evicted -->
+    <div class="avoid-break">
+        <div class="row d-flex align-items-center mt-2">
+            @Html.LabelFor(model => model.HasBeenEvicted, htmlAttributes: new { @class = "col-auto" })
+            <div class="col-@ViewBag.colsize-1">
+                @Html.EnumDropDownListFor(model => model.HasBeenEvicted, "-", new { @visibletogglefor = nameof(Model.HasBeenEvicted), @class = "yesno_visible_toggle form-control" })
+            </div>
+            @Html.ValidationMessageFor(model => model.HasBeenEvicted, "", new { @class = "col-auto text-danger" })
+        </div>
+        <!-- Evicted Explain -->
+        <div id="@nameof(Model.HasBeenEvicted)" @(Model.HasBeenEvicted == BusinessLayer.Enums.YesNo.Yes ? "" : "style=display:none;") class="container">
+            @Html.LabelFor(model => model.ExplainBeenEvicted)
+            @Html.EditorFor(model => model.ExplainBeenEvicted, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ExplainBeenEvicted, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <!-- Marijuana Card -->
+    <div class="row d-flex align-items-center mt-2">
+        @Html.LabelFor(model => model.MarijuanaCard, htmlAttributes: new { @class = "col-auto" })
+        <div class="col-@ViewBag.colsize-1 ">
+            @Html.EnumDropDownListFor(model => model.MarijuanaCard, "-", new { @class = "form-control" })
+        </div>
+        @Html.ValidationMessageFor(model => model.MarijuanaCard, "", new { @class = "col-auto text-danger " })
+    </div>
+    <!-- Has Smokers -->
+    <div class="row align-items-center mt-2 avoid-break">
+        @Html.LabelFor(model => model.Smokers, htmlAttributes: new { @class = "col-auto" })
+        <div class="col-@ViewBag.colsize-1">
+            @Html.EnumDropDownListFor(model => model.Smokers, "-", new { @visibletogglefor = nameof(Model.Smokers), @class = "yesno_visible_toggle form-control" })
+        </div>
+        <!-- Smokers Count -->
+        <div id="@nameof(Model.Smokers)" @(Model.Smokers == BusinessLayer.Enums.YesNo.Yes ? "" : "style=display:none;") class="row col-auto align-items-center">
+            @Html.LabelFor(model => model.SmokersCount, htmlAttributes: new { @class = $"col-auto" })
+            <div class="col-@ViewBag.colsize-2">
+                @Html.EditorFor(model => model.SmokersCount, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+            @Html.ValidationMessageFor(model => model.SmokersCount, "", new { @class = "col-auto text-danger " })
+        </div>
+        @Html.ValidationMessageFor(model => model.Smokers, "", new { @class = "col-auto text-danger " })
+    </div>
+    <!-- Has Drinkers -->
+    <div class="row d-flex align-items-center mt-2 avoid-break">
+        @Html.LabelFor(model => model.Drinkers, htmlAttributes: new { @class = "col-auto" })
+        <div class="col-@ViewBag.colsize-1 ">
+            @Html.EnumDropDownListFor(model => model.Drinkers, "-", new { @visibletogglefor = nameof(Model.Drinkers), @class = "yesno_visible_toggle form-control" })
+        </div>
+        <!-- Drinkers How Often -->
+        <div id="@nameof(Model.Drinkers)" @(Model.Drinkers == BusinessLayer.Enums.YesNo.Yes ? "" : "style=display:none;") class="row col-auto align-items-center">
+            @Html.LabelFor(model => model.HowOftenDrink, htmlAttributes: new { @class = $"col-auto" })
+            <div class="col-@ViewBag.colsize-7">
+                @Html.EnumDropDownListFor(model => model.HowOftenDrink, "-", new { @visibletogglefor = nameof(Model.Drinkers), @class = "yesno_visible_toggle form-control" })
+            </div>
+            @Html.ValidationMessageFor(model => model.HowOftenDrink, "", new { @class = "col-auto text-danger" })
+        </div>
+        @Html.ValidationMessageFor(model => model.Drinkers, "", new { @class = "col-auto text-danger " })
+    </div>
+    <!-- Has Pets -->
+    <div class="avoid-break">
+        <div class="row d-flex align-items-center mt-2">
+            @Html.LabelFor(model => model.AnyPets, htmlAttributes: new { @class = "col-auto" })
+            <div class="col-@ViewBag.colsize-1">
+                @Html.EnumDropDownListFor(model => model.AnyPets, "-", new { @visibletogglefor = nameof(Model.AnyPets), @class = "yesno_visible_toggle form-control" })
+            </div>
+            @Html.ValidationMessageFor(model => model.AnyPets, "", new { @class = "col-auto text-danger " })
+        </div>
+        <!-- Describe Pets -->
+        <div id="@nameof(Model.AnyPets)" @(Model.AnyPets == BusinessLayer.Enums.YesNo.Yes ? "" : "style=display:none;") class="container">
+            @Html.LabelFor(model => model.DescribePets)
+            @Html.EditorFor(model => model.DescribePets, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DescribePets, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <!-- Any Non Human -->
+    <div class="avoid-break">
+        <div class="row d-flex align-items-center mt-2">
+            @Html.LabelFor(model => model.AnyNonHuman, htmlAttributes: new { @class = "col-auto" })
+            <div class="col-@ViewBag.colsize-1">
+                @Html.EnumDropDownListFor(model => model.AnyNonHuman, "-", new { @visibletogglefor = nameof(Model.AnyNonHuman), @class = "yesno_visible_toggle form-control" })
+            </div>
+            @Html.ValidationMessageFor(model => model.AnyNonHuman, "", new { @class = "col-auto text-danger " })
+        </div>
+        <!-- Describe Non Human -->
+        <div id="@nameof(Model.AnyNonHuman)" @(Model.AnyNonHuman == BusinessLayer.Enums.YesNo.Yes ? "" : "style=display:none;") class="container">
+            @Html.LabelFor(model => model.DescribeNonHuman)
+            @Html.EditorFor(model => model.DescribeNonHuman, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DescribeNonHuman, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <!-- Attend College -->
+    <div class="avoid-break">
+        <div class="row d-flex align-items-center mt-2">
+            @Html.LabelFor(model => model.AttendCollege, htmlAttributes: new { @class = "col-auto" })
+            <div class="col-@ViewBag.colsize-1">
+                @Html.EnumDropDownListFor(model => model.AttendCollege, "-", new { @visibletogglefor = nameof(Model.AttendCollege), @class = "yesno_visible_toggle form-control" })
+            </div>
+            <div id="@nameof(Model.AttendCollege)" @(Model.AttendCollege == BusinessLayer.Enums.YesNo.Yes ? "" : "style=display:none;") class="row col-auto align-items-center">
+                @Html.LabelFor(model => model.CollegeYearsAttended, htmlAttributes: new { @class = "col-auto" })
+                <div class="col-@ViewBag.colsize-2">
+                    @Html.EditorFor(model => model.CollegeYearsAttended, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                @Html.ValidationMessageFor(model => model.CollegeYearsAttended, "", new { @class = "col-auto text-danger" })
+            </div>
+            @Html.ValidationMessageFor(model => model.AttendCollege, "", new { @class = "col-auto text-danger " })
+        </div>
+        <!-- College Information -->
+        <div id="@nameof(Model.AttendCollege)" @(Model.AttendCollege == BusinessLayer.Enums.YesNo.Yes ? "" : "style=display:none;") class="container mt-2">
+            @Html.LabelFor(model => model.PlanToGraduate)
+            @Html.EditorFor(model => model.PlanToGraduate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PlanToGraduate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="avoid-break">
+        <!-- Need Reasonable Accommodation -->
+        <div class="row d-flex align-items-center mt-2">
+            @Html.LabelFor(model => model.NeedReasonableAccommodation, htmlAttributes: new { @class = "col-auto" })
+            <div class="col-@ViewBag.colsize-1">
+                @Html.EnumDropDownListFor(model => model.NeedReasonableAccommodation, "-", new { @visibletogglefor = nameof(Model.NeedReasonableAccommodation), @class = "yesno_visible_toggle form-control" })
+            </div>
+            @Html.ValidationMessageFor(model => model.NeedReasonableAccommodation, "", new { @class = "col-auto text-danger" })
+        </div>
+        <!-- Describe Reasonable Accommodation -->
+        <div id="@nameof(Model.NeedReasonableAccommodation)" @(Model.NeedReasonableAccommodation == BusinessLayer.Enums.YesNo.Yes ? "" : "style=display:none;") class="container">
+            @Html.LabelFor(model => model.DescribeReasonableAccommodation)
+            @Html.EditorFor(model => model.DescribeReasonableAccommodation, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.DescribeReasonableAccommodation, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="avoid-break mt-4">
+        @Html.LabelFor(model => model.AdditionalComments)
+        @Html.EditorFor(model => model.AdditionalComments, new { htmlAttributes = new { @class = "form-control" } })
+    </div>
+    <!-- Certification And Authorization -->
+    <div class="avoid-break">
+        @Html.Label(rm.APP_CERT_AND_AUTH, htmlAttributes: new { @class = $"h5 col-{ViewBag.colsize}-12 mt-4 text-center" })
+        <div id="@nameof(Model.CertificationAndAuthorization)" class="row align-items-center offset-@ViewBag.colsize-1 mt-2">
+            @Html.LabelFor(model => model.CertificationAndAuthorization, htmlAttributes: new { @class = "h6 col-auto" })
+            <div class="col-@ViewBag.colsize-1">
+                @Html.EnumDropDownListFor(model => model.CertificationAndAuthorization, "-", new { @visibletogglefor = nameof(Model.CertificationAndAuthorization), @class = "yesno_visible_toggle form-control" })
+            </div>
+            @Html.ValidationMessageFor(model => model.CertificationAndAuthorization, "", new { @class = "col-auto text-danger" })
+        </div>
+        <div class="container">
+            <p class="offset-@ViewBag.colsize-1 col-@ViewBag.colsize-10 align-self-center">@rm.APP_CERT_AND_AUTH_DESC</p>
+        </div>
+    </div>
+    <!-- Submit button -->
+    if (ViewBag.inlinecss == null)
+    {
+        <div class="row">
+            <input type="submit" value="Submit" class="btn btn-success offset-@ViewBag.colsize-5 mt-2 mb-4 col-@ViewBag.colsize-2" />
+        </div>
+    }
+}
+@if (ViewBag.Errors == true)
+{
+    <!-- Validate if returned from server with errors -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#application_form").valid();
+        });
+    </script>
+}
+<!-- Datepicker script for date editor -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('input[type=datetime]').datepicker({
+            dateFormat: "m/dd/yy",
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-10:+1"
+        });
+
+    });
+</script>

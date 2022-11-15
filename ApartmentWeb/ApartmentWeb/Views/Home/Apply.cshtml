@@ -1,0 +1,18 @@
+﻿@using ApartmentWeb.Controllers
+@using rm = Resources.Website.Home
+@model BusinessLayer.Application
+@{
+    ViewBag.Title = rm.APPLY;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            @Html.ActionLink(rm.HOME, nameof(HomeController.Index), HomeController.Name)
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">@rm.APPLY</li>
+    </ol>
+</nav>
+
+@Html.Partial("~/Views/Application/_Application.cshtml", Model)
