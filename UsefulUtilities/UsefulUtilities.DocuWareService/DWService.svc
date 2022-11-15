@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="UsefulUtilities.DocuWareService.DWService" CodeBehind="DWService.svc.cs" %>

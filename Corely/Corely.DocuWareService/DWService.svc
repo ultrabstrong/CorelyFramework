@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Corely.DocuWareService.DWService" CodeBehind="DWService.svc.cs" %>

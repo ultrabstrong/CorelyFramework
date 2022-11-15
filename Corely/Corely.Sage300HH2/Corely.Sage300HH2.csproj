@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{66CA5601-791E-4B90-B146-43D5B03A8493}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Corely.Sage300HH2</RootNamespace>
+    <AssemblyName>Corely.Sage300HH2</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connection\AuthenticatedClient.cs" />
+    <Compile Include="Connection\AuthenticatedUser.cs" />
+    <Compile Include="Connection\AuthenticateSessionResponse.cs" />
+    <Compile Include="Connection\AuthenticationResult.cs" />
+    <Compile Include="Core\Account.cs" />
+    <Compile Include="Core\Category.cs" />
+    <Compile Include="Core\CostCode.cs" />
+    <Compile Include="Core\Distribution.cs" />
+    <Compile Include="Core\Document\Get\DenormalizedDistribution.cs" />
+    <Compile Include="Core\Document\Get\DenormalizedDocument.cs" />
+    <Compile Include="Core\Document\Get\LastAction.cs" />
+    <Compile Include="Core\Document\Update\UpdateDocumentRequest.cs" />
+    <Compile Include="Core\Generic\PostErrors.cs" />
+    <Compile Include="Core\Invoice.cs" />
+    <Compile Include="Core\InvoiceStatus.cs" />
+    <Compile Include="Core\Payment.cs" />
+    <Compile Include="Core\PaymentType.cs" />
+    <Compile Include="Core\StandardCategory.cs" />
+    <Compile Include="Core\SyncFailure.cs" />
+    <Compile Include="Core\Type.cs" />
+    <Compile Include="Core\Vendor.cs" />
+    <Compile Include="Core\Document\Create\CreateDocumentRequest.cs" />
+    <Compile Include="Core\Generic\IVersioned.cs" />
+    <Compile Include="Core\Job.cs" />
+    <Compile Include="Core\Generic\HH2PagedResult.cs" />
+    <Compile Include="Core\Document\InvoiceDistribution.cs" />
+    <Compile Include="Core\Document\InvoiceHeader.cs" />
+    <Compile Include="Core\Document\InvoiceSnapshot.cs" />
+    <Compile Include="Exceptions\SageHH2NotConnectedException.cs" />
+    <Compile Include="Core\RequestExecutionStatus.cs" />
+    <Compile Include="Resources\Strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SageHH2Connection.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Corely\Corely.csproj">
+      <Project>{2ce991b3-cc1a-434b-a557-64c1afc54cdf}</Project>
+      <Name>Corely</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
