@@ -1,7 +1,7 @@
 ﻿using ApartmentWeb.SiteConfiguration;
-using KelleyUtilities.Data.Serialization;
-using KelleyUtilities.Extensions;
-using KelleyUtilities.Logging;
+using Corely.Data.Serialization;
+using Corely.Extensions;
+using Corely.Logging;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
