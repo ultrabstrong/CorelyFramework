@@ -21,7 +21,7 @@ namespace ApartmentWeb
 
         /// <summary>
         /// Lock object for single-threaded interaction with configuration
-        /// </summary>
+        /// </summary> 
         private static object ConfigLock { get; set; } = new object();
 
         #region Constructor / Initialization
