@@ -1,0 +1,148 @@
+﻿<UserControl x:Class="UsefulUtilities.UI.DistributionSettingsListUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:UsefulUtilities.UI"
+             xmlns:rm="clr-namespace:UsefulUtilities.Resources.UI"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="350">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <!-- Converters -->
+            <local:InvertedBoolToVisibilityConverter x:Key="InvertedBoolToVisibilityConverter" />
+            <!-- Merged styles -->
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <!-- Add button -->
+            <Border Width="110"
+                    Padding="2"
+                    Margin="-2,0,0,0"
+                    Style="{StaticResource borderButton}"
+                    HorizontalAlignment="Left"
+                    MouseDown="AddSettingsButton_MouseDown">
+                <StackPanel Orientation="Horizontal">
+                    <Border Margin="0,0,5,0">
+                        <Image Width="20"
+                               Height="20"
+                               RenderOptions.BitmapScalingMode="HighQuality"
+                               Source="Images/coloradd.png" />
+                    </Border>
+                    <TextBlock Style="{StaticResource TextblockBase}"
+                               Text="{x:Static rm:DistributionSettingsListUC.addSettings}" />
+                </StackPanel>
+            </Border>
+            <!-- Save button -->
+            <Border Width="110"
+                    Padding="2"
+                    Style="{StaticResource borderButton}"
+                    Visibility="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, Path=HideSave, Converter={StaticResource InvertedBoolToVisibilityConverter}}"
+                    HorizontalAlignment="Left"
+                    MouseDown="SaveSettingsButton_MouseDown">
+                <StackPanel Orientation="Horizontal">
+                    <Border Margin="0,0,5,0">
+                        <Image Width="20"
+                               Height="20"
+                               RenderOptions.BitmapScalingMode="HighQuality"
+                               Source="Images/colorsave.png" />
+                    </Border>
+                    <TextBlock Style="{StaticResource TextblockBase}"
+                               Text="{x:Static rm:DistributionSettingsListUC.saveSettings}" />
+                </StackPanel>
+            </Border>
+            <!-- Delete button -->
+            <Border Width="115"
+                    Padding="2"
+                    HorizontalAlignment="Left"
+                    MouseDown="RemoveSettingsButton_MouseDown">
+                <Border.Style>
+                    <Style TargetType="Border"
+                           BasedOn="{StaticResource borderButton}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=settingsDropdown, Path=SelectedIndex}"
+                                         Value="-1">
+                                <Setter Property="Visibility"
+                                        Value="Hidden" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Border.Style>
+                <StackPanel Orientation="Horizontal">
+                    <Border Margin="0,0,5,0">
+                        <Image Width="20"
+                               Height="20"
+                               RenderOptions.BitmapScalingMode="HighQuality"
+                               Source="Images/colordelete.png" />
+                    </Border>
+                    <TextBlock Style="{StaticResource TextblockBase}"
+                               Text="{x:Static rm:DistributionSettingsListUC.deleteSettings}" />
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        <!-- Distribution Settings List -->
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center">
+            <TextBlock Text="{x:Static rm:DistributionSettingsListUC.distSettings}"
+                       Style="{StaticResource TextblockBase}"
+                       Width="100" />
+            <ComboBox x:Name="settingsDropdown"
+                      Style="{StaticResource ComboboxBase}"
+                      ItemsSource="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, Path=Settings}"
+                      DisplayMemberPath="Name"
+                      Width="150"
+                      SelectedIndex="0"/>
+            <!-- Copy button -->
+            <Border Padding="2"
+                    Margin="5,0,0,0"
+                    Style="{StaticResource borderButton}"
+                    HorizontalAlignment="Right"
+                    MouseDown="CopySettingsButton_MouseDown">
+                <Image Width="20"
+                       Height="20"
+                       RenderOptions.BitmapScalingMode="HighQuality"
+                       Source="Images/colorcopy.png" />
+            </Border>
+        </StackPanel>
+        <!-- Distributions grid -->
+        <Grid Grid.Row="2">
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=settingsDropdown, Path=SelectedIndex}"
+                                     Value="-1">
+                            <Setter Property="Visibility"
+                                    Value="Collapsed" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="22" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!-- Distribution header -->
+            <TextBlock Style="{StaticResource TextblockBase}"
+                       TextAlignment="Left">
+                    <Run Text="{x:Static rm:DistributionSettingsListUC.configureSettings}" />
+                    <Run Text="{Binding ElementName=settingsDropdown, Path=SelectedItem.Name}" /></TextBlock>
+            <!-- Distribution settings -->
+            <local:DistributionSettingsUC Settings="{Binding ElementName=settingsDropdown, Path=SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                               Grid.Row="1"
+                                               BorderBrush="Black"
+                                               BorderThickness="1"
+                                               Padding="5" />
+        </Grid>        
+    </Grid>
+</UserControl>
