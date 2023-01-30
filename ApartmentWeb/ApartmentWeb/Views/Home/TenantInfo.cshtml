@@ -63,8 +63,7 @@
                         </div>
                         <div class="card-body">
                             <p class="card-text">
-                                @Html.Raw(Html.Encode(@Shared.Configuration.SiteDetails.PostOfficeAddress).Replace("\n", "<br />"))<br />
-                                406-586-1508
+                                @Html.Raw(Html.Encode(@Shared.Configuration.SiteDetails.TenantInfoPostOfficeAddress).Replace("\n", "<br />"))<br />
                             </p>
                         </div>
                     </div>
@@ -101,7 +100,7 @@
                         </div>
                     </div>
                 </div>
-                @if (Shared.Configuration.SiteDetails.ShowTrash)
+                @if (Shared.Configuration.SiteDetails.TenantInfoShowTrash)
                 {
                     <!-- Trash -->
                     <div class="col-sm my-2">

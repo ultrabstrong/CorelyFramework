@@ -1,4 +1,6 @@
 ﻿using ApartmentWeb.SiteConfiguration;
+using BusinessLayer.Core;
+using Corely.Core;
 using Corely.Data.Serialization;
 using Corely.Extensions;
 using Corely.Logging;
@@ -50,8 +52,32 @@ namespace ApartmentWeb
                 {
                     Configuration = new SiteConfig()
                     {
-                        LogLevel = LogLevel.WARN.GetLogLevelName()
+                        LogLevel = LogLevel.WARN.GetLogLevelName(),
+                        SiteDetails = new SiteDetails()
+                        {
+                            CompanyName = "CompanyName",
+                            CompanyShortName = "CompanyShortName",
+                            EmailAddress = "EmailAddress",
+                            PhoneNumber = "PhoneNumber",
+                            Address = "Address",
+                            MailSettings = new MailSettings()
+                            {
+                                SMTPServer = "SMTPServer",
+                                SMTPUsername = "SMTPUsername",
+                                SMTPPw = "SMTPPw",
+                                SMTPPort = 0,
+                                SMTPTo = "SMTPTo"
+                            },
+                            ShowDownloadApplication = true,
+                            TenantInfoShowTrash = false,
+                            TenantInfoPostOfficeAddress = "PostOfficeAddress",
+                            TenantInfoDocs = new NamedValues(new Dictionary<string, string>()
+                            {
+                                { "DisplayName", "FileName" }
+                            })
+                        }
                     };
+                    
                     SaveConfiguration();
                 }
                 else

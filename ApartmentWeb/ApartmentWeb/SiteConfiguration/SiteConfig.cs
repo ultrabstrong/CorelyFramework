@@ -14,23 +14,7 @@ namespace ApartmentWeb.SiteConfiguration
         /// <summary>
         /// Site details
         /// </summary>
-        [XmlIgnore]
-        public ISiteDetails SiteDetails { get; internal set; }
-
-        /// <summary>
-        /// Site details ID
-        /// </summary>
-        public int SiteDetailsId 
-        { 
-            get => _siteDetailsId;
-            set
-            {
-                _siteDetailsId = value;
-                ISiteDetails siteDetails = SiteDetailsFactory.GetSiteDetails(_siteDetailsId);
-                SiteDetails = siteDetails;
-            }
-        }
-        private int _siteDetailsId;
+        public SiteDetails SiteDetails { get; set; }
 
         /// <summary>
         /// Log level
