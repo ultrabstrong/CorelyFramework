@@ -88,11 +88,20 @@ namespace Resources.Website {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rental Reference.
+        ///   Looks up a localized string similar to Current Address.
         /// </summary>
-        public static string RENTAL_REFERENCE {
+        public static string CURRENT_ADDRESS {
             get {
-                return ResourceManager.GetString("RENTAL_REFERENCE", resourceCulture);
+                return ResourceManager.GetString("CURRENT_ADDRESS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to if applicable.
+        /// </summary>
+        public static string IF_APPLICABLE {
+            get {
+                return ResourceManager.GetString("IF_APPLICABLE", resourceCulture);
             }
         }
     }

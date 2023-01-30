@@ -124,7 +124,7 @@ namespace Resources.BusinessLayer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Add another rental reference.
+        ///   Looks up a localized string similar to Add rental history.
         /// </summary>
         public static string APP_ADD_RENT_REF {
             get {
@@ -196,7 +196,7 @@ namespace Resources.BusinessLayer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Is there income from another job you are currently employed at that you would like considered?.
+        ///   Looks up a localized string similar to Is there another source of income you would like considered?.
         /// </summary>
         public static string APP_CONSIDER_OTHER_INCOME {
             get {
@@ -340,7 +340,7 @@ namespace Resources.BusinessLayer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to If no one in the household is employed or you would like other income considered, please explain:.
+        ///   Looks up a localized string similar to Please explain:.
         /// </summary>
         public static string APP_OTHER_INCOME {
             get {
@@ -421,7 +421,7 @@ namespace Resources.BusinessLayer {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Rental Reference #2.
+        ///   Looks up a localized string similar to Previous Rental.
         /// </summary>
         public static string APP_RENT_REF_1 {
             get {

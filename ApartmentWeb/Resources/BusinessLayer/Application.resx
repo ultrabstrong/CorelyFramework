@@ -142,7 +142,7 @@
     <value>Add personal reference</value>
   </data>
   <data name="APP_ADD_RENT_REF" xml:space="preserve">
-    <value>Add another rental reference</value>
+    <value>Add rental history</value>
   </data>
   <data name="APP_ANTICIPATED_DURATION" xml:space="preserve">
     <value>How long do you anticipate leasing this dwelling?</value>
@@ -163,7 +163,7 @@
     <value>How many years have you attended?</value>
   </data>
   <data name="APP_CONSIDER_OTHER_INCOME" xml:space="preserve">
-    <value>Is there income from another job you are currently employed at that you would like considered?</value>
+    <value>Is there another source of income you would like considered?</value>
   </data>
   <data name="APP_CRIMINAL_RECORD" xml:space="preserve">
     <value>Please explain</value>
@@ -211,7 +211,7 @@
     <value>Who else from your group is applying for this location?</value>
   </data>
   <data name="APP_OTHER_INCOME" xml:space="preserve">
-    <value>If no one in the household is employed or you would like other income considered, please explain:</value>
+    <value>Please explain:</value>
   </data>
   <data name="APP_PARENTS_PAY" xml:space="preserve">
     <value>Do your parents pay some or all of your rent?</value>
@@ -241,7 +241,7 @@
     <value>Rental Address</value>
   </data>
   <data name="APP_RENT_REF_1" xml:space="preserve">
-    <value>Rental Reference #2</value>
+    <value>Previous Rental</value>
   </data>
   <data name="APP_RENT_REF_2" xml:space="preserve">
     <value>Rental Reference #3</value>

@@ -134,9 +134,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CssHelper.cs" />
-    <Compile Include="SiteConfiguration\ApexPropertiesSiteDetails.cs" />
     <Compile Include="SiteConfiguration\SiteDetails.cs" />
-    <Compile Include="SiteConfiguration\RentInBozemanSiteDetails.cs" />
     <Compile Include="Shared.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">

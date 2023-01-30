@@ -82,11 +82,11 @@ namespace ConsoleTest
         {
             MailSettings settings = new MailSettings()
             {
-                SMTPServer = "sm04.internetmailserver.net",
-                SMTPUsername = "Application@rentinbozeman.net",
-                SMTPPw = "snowC@pp3dPeeks",
+                SMTPServer = "server",
+                SMTPUsername = "username",
+                SMTPPw = "pw",
                 SMTPPort = 25,
-                SMTPTo = "rentinbozeman@gmail.com"
+                SMTPTo = "to"
             };
             // Initialize SMTP client
             SmtpClient client = null;

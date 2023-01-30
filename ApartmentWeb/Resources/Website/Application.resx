@@ -126,7 +126,10 @@
   <data name="APP_RESOLVE_ERRORS" xml:space="preserve">
     <value>Please resolve the following errors</value>
   </data>
-  <data name="RENTAL_REFERENCE" xml:space="preserve">
-    <value>Rental Reference</value>
+  <data name="CURRENT_ADDRESS" xml:space="preserve">
+    <value>Current Address</value>
+  </data>
+  <data name="IF_APPLICABLE" xml:space="preserve">
+    <value>if applicable</value>
   </data>
 </root>

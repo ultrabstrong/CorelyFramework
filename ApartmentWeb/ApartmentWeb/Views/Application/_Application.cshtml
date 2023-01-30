@@ -53,12 +53,10 @@
     <!-- Automobile -->
     @Html.EditorFor(model => model.Automobile)
     <!-- Current Rental -->
-    @Html.Label(rm.RENTAL_REFERENCE, htmlAttributes: new { @class = "h6 col-auto mt-2" })
+    @Html.Label(rm.CURRENT_ADDRESS, htmlAttributes: new { @class = "h6 col-auto mt-2" })
     @Html.EditorFor(model => model.CurrentRental)
     <!-- Prior rental reference 1 -->
     @Html.EditorFor(model => model.PriorRentRef1)
-    <!-- Prior rental reference 2 -->
-    @Html.EditorFor(model => model.PriorRentRef2)
     <!-- Personal Reference 1 -->
     @Html.EditorFor(model => model.PersonalReference1)
     <!-- Personal Reference 2 -->
