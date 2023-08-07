@@ -3,13 +3,9 @@ using Corely.Helpers;
 using SelectPdf;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
@@ -20,7 +16,8 @@ namespace ConsoleTest
         /// <summary>
         /// Desktop path
         /// </summary>
-        static string DesktopLoc { get; } = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\";
+        static readonly string DesktopLoc = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\";
+        static readonly string DownloadsLoc = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads\\";
 
         /// <summary>
         /// Entry point for console test
@@ -30,10 +27,7 @@ namespace ConsoleTest
         {
             try
             {
-                var reg = new Regex(@"^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$");
-                var email = "ultrabstrong@gmail.com";
-                Console.WriteLine(reg.IsMatch(email));
-                //TestHTMLtoPDF();
+                TestAirTable().GetAwaiter();
             }
             catch (Exception ex)
             {
@@ -41,6 +35,49 @@ namespace ConsoleTest
             }
             Console.WriteLine("Program finished. Press any key to exit");
             Console.ReadKey();
+        }
+
+        public class Application
+        {
+            public string name { get; set; }
+            public string notes { get; set; }
+
+            public List<AirtableApiClient.AirtableAttachment> applicationpdf { get; set; }
+        }
+
+        static async Task TestAirTable()
+        {
+            AirtableApiClient.AirtableBase baseClient = new AirtableApiClient.AirtableBase("key1", "key2");
+
+            AirtableApiClient.Fields fields = new AirtableApiClient.Fields();
+
+            fields.AddField("name", "appTest");
+
+
+            string apptext = File.ReadAllText(DownloadsLoc + "app.pdf");
+            apptext = Corely.Data.Encoding.Base64String.Base64Encode(apptext);
+            fields.AddField("notes", apptext);
+
+            var res = await baseClient.CreateRecord("applications", fields);
+
+            var record = await baseClient.RetrieveRecord<Application>("applications", "appTest");
+            apptext = Corely.Data.Encoding.Base64String.Base64Decode(record.Record.Fields.notes);
+            File.WriteAllText(apptext, DownloadsLoc + "app2.pdf");
+
+            /*
+            var records = await baseClient.ListRecords<Application>("applications");
+            foreach (var r in records.Records)
+            {
+                Console.WriteLine($"{r.Fields.name} - {r.Fields.notes}");
+            }
+            */
+        }
+
+        static void TestEmailRegex()
+        {
+            var reg = new Regex(@"^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$");
+            var email = "ultrabstrong@gmail.com";
+            Console.WriteLine(reg.IsMatch(email));
         }
 
         /// <summary>
