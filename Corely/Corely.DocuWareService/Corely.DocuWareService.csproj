@@ -107,12 +107,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Corely\Corely.csproj">
-      <Project>{2ce991b3-cc1a-434b-a557-64c1afc54cdf}</Project>
-      <Name>Corely</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Resources\ServiceResponses.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>ServiceResponses.Designer.cs</LastGenOutput>
@@ -127,6 +121,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Corely">
+      <Version>5.5.2</Version>
+    </PackageReference>
     <PackageReference Include="DocuWare.Platform.ServerClient.Extensions">
       <Version>11.0.2</Version>
     </PackageReference>

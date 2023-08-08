@@ -78,12 +78,11 @@
       <Project>{2e952fcc-fd7f-4174-9057-13e016e7c176}</Project>
       <Name>Corely.DocuWare</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Corely\Corely.csproj">
-      <Project>{2ce991b3-cc1a-434b-a557-64c1afc54cdf}</Project>
-      <Name>Corely</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Corely">
+      <Version>5.5.2</Version>
+    </PackageReference>
     <PackageReference Include="DocuWare.Platform.ServerClient.Extensions">
       <Version>11.0.2</Version>
     </PackageReference>

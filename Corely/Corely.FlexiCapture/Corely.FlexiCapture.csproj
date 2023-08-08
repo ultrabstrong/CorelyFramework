@@ -36,6 +36,9 @@
       <HintPath>projectpackages\ControllerInterop.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Corely, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Corely.5.5.2\lib\net48\Corely.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -64,17 +67,13 @@
     <Compile Include="RowCalcOperation.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Corely\Corely.csproj">
-      <Project>{2ce991b3-cc1a-434b-a557-64c1afc54cdf}</Project>
-      <Name>Corely</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Resources\LineSplitSettings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>LineSplitSettings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
