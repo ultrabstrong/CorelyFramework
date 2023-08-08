@@ -399,4 +399,4 @@ FodyWeavers.xsd
 *.sln.iml
 
 # Custom
-*nuget*.cmd*
+*nuget*.cmd

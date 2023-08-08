@@ -1,0 +1,6 @@
+@echo off
+set /p version="Enter Version: "
+del *.nupkg
+NuGet.exe pack -Prop Configuration=Release -Build -Version %version%
+NuGet.exe setApiKey <NUGET_PAT>
+NuGet.exe push *.nupkg -Source https://api.nuget.org/v3/index.json

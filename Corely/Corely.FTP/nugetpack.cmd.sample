@@ -1,0 +1,3 @@
+@echo off
+set /p version="Enter Version: "
+NuGet.exe pack -Prop Configuration=Release -Build -Version %version%
