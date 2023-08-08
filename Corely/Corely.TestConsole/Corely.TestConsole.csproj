@@ -79,22 +79,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Corely.DocuWareService\Corely.DocuWareService.csproj">
-      <Project>{991D3002-C2C6-4498-95AA-060A79A4BE66}</Project>
-      <Name>Corely.DocuWareService</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Corely.DocuWare\Corely.DocuWare.csproj">
-      <Project>{2e952fcc-fd7f-4174-9057-13e016e7c176}</Project>
-      <Name>Corely.DocuWare</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Corely.FC2DW\Corely.FC2DW.csproj">
-      <Project>{21709175-4F88-4115-9F6C-9D09476B035D}</Project>
-      <Name>Corely.FC2DW</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Corely.FlexiCapture\Corely.FlexiCapture.csproj">
-      <Project>{6847E0D5-B026-4C04-ACC9-0705868076C6}</Project>
-      <Name>Corely.FlexiCapture</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Corely.FTP\Corely.FTP.csproj">
       <Project>{4521f34d-69cc-4e60-baf7-1d7e6451a3e9}</Project>
       <Name>Corely.FTP</Name>
@@ -103,22 +87,14 @@
       <Project>{5eed6861-3c30-4490-bf34-ac52c49eed16}</Project>
       <Name>Corely.Imaging</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Corely.Kingstone\Corely.Kingstone.csproj">
-      <Project>{494e5dd1-8768-4ff8-bd86-e974e93b21c4}</Project>
-      <Name>Corely.Kingstone</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Corely\Corely.csproj">
       <Project>{2ce991b3-cc1a-434b-a557-64c1afc54cdf}</Project>
       <Name>Corely</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Corely.Sage300HH2\Corely.Sage300HH2.csproj">
-      <Project>{66ca5601-791e-4b90-b146-43d5b03a8493}</Project>
-      <Name>Corely.Sage300HH2</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>13.0.1</Version>
+      <Version>13.0.3</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
