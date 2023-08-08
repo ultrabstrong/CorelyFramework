@@ -21,9 +21,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corely.FC2DW", "Corely.FC2D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibPostalNet", "LibPostalNet\LibPostalNet.csproj", "{7154A21B-B8A8-4A1F-A1DB-078C1F1B600E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corely.LibPostalService", "Corely.LibPostalService\Corely.LibPostalService.csproj", "{42557ACD-692F-44AD-96A6-565C2EAF7883}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibPostalService", "LibPostalService\LibPostalService.csproj", "{42557ACD-692F-44AD-96A6-565C2EAF7883}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corely.LibPostalClient", "Corely.LibPostalClient\Corely.LibPostalClient.csproj", "{16B4053A-2C86-4400-AE97-FE44CEC638FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibPostalClient", "LibPostalClient\LibPostalClient.csproj", "{16B4053A-2C86-4400-AE97-FE44CEC638FD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corely.Kingstone", "Corely.Kingstone\Corely.Kingstone.csproj", "{494E5DD1-8768-4FF8-BD86-E974E93B21C4}"
 EndProject

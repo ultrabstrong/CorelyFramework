@@ -1,14 +1,17 @@
-﻿using Corely.FC2DW;
-using Corely.Connections.Proxies;
+﻿using Corely.Core;
 using Corely.Data.Culture;
 using Corely.Data.Dates;
 using Corely.Data.Delimited;
 using Corely.Data.Serialization;
-using Corely.FlexiCapture;
+using Corely.Distribution;
+using Corely.DocuWare;
+using Corely.FC2DW;
 using Corely.FTP;
 using Corely.Helpers;
-using Corely.Imaging.Core;
 using Corely.Imaging.Converters;
+using Corely.Imaging.Core;
+using Corely.Kingstone;
+using Corely.Kingstone.Core;
 using Corely.Logging;
 using Corely.Sage300HH2;
 using Corely.Sage300HH2.Core;
@@ -16,36 +19,16 @@ using Corely.Sage300HH2.Core.Document;
 using Corely.Security;
 using Corely.Security.Authentication;
 using Corely.UI;
+using DocuWare.Platform.ServerClient;
+using LibPostalNet;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
-using System.Net.Http;
-using System.Threading;
-using LibPostalNet;
-using System.Text;
-using System.Net;
-using Corely.Data.Text;
-using Corely.LibPostalClient;
-using System.Text.RegularExpressions;
-using Corely.Sage300HH2.Core.Generic;
-using Corely.Kingstone;
-using Corely.Kingstone.Core;
-using System.Threading.Tasks;
-using Corely.DocuWareService;
-using Corely.Services;
-using Corely.DocuWareService.Core.Responses;
-using Corely.Distribution;
-using System.Data.SqlClient;
 using System.Security.Cryptography;
-using Corely.Data.Encoding;
-using Corely.Connections;
-using Corely.Core;
-using System.Security.Authentication;
-using DocuWare.Platform.ServerClient;
-using Corely.DocuWare;
+using System.Threading;
 
 namespace Corely.TestConsole
 {
@@ -103,7 +86,7 @@ namespace Corely.TestConsole
             lookup.Corrections.Add("Virgin Islands (BR)", "British Virgin Islands");
             lookup.Corrections.Add("Cape Verde", "Cabo Verde");
             // Load country names from CSV file
-            string[] countrynames = new[] { null, "", "USA" }; 
+            string[] countrynames = new[] { null, "", "USA" };
             for (int i = 1; i < countrynames.Length; i++)
             {
                 string countryname = countrynames[i] ?? "USA";

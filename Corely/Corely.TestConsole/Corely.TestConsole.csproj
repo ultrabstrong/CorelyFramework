@@ -107,13 +107,13 @@
       <Project>{494e5dd1-8768-4ff8-bd86-e974e93b21c4}</Project>
       <Name>Corely.Kingstone</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Corely.LibPostalClient\Corely.LibPostalClient.csproj">
+    <ProjectReference Include="..\LibPostalClient\LibPostalClient.csproj">
       <Project>{16b4053a-2c86-4400-ae97-fe44cec638fd}</Project>
-      <Name>Corely.LibPostalClient</Name>
+      <Name>LibPostalClient</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Corely.LibPostalService\Corely.LibPostalService.csproj">
+    <ProjectReference Include="..\LibPostalService\LibPostalService.csproj">
       <Project>{42557acd-692f-44ad-96a6-565c2eaf7883}</Project>
-      <Name>Corely.LibPostalService</Name>
+      <Name>LibPostalService</Name>
     </ProjectReference>
     <ProjectReference Include="..\Corely\Corely.csproj">
       <Project>{2ce991b3-cc1a-434b-a557-64c1afc54cdf}</Project>
