@@ -107,14 +107,6 @@
       <Project>{494e5dd1-8768-4ff8-bd86-e974e93b21c4}</Project>
       <Name>Corely.Kingstone</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LibPostalClient\LibPostalClient.csproj">
-      <Project>{16b4053a-2c86-4400-ae97-fe44cec638fd}</Project>
-      <Name>LibPostalClient</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LibPostalService\LibPostalService.csproj">
-      <Project>{42557acd-692f-44ad-96a6-565c2eaf7883}</Project>
-      <Name>LibPostalService</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Corely\Corely.csproj">
       <Project>{2ce991b3-cc1a-434b-a557-64c1afc54cdf}</Project>
       <Name>Corely</Name>
@@ -122,10 +114,6 @@
     <ProjectReference Include="..\Corely.Sage300HH2\Corely.Sage300HH2.csproj">
       <Project>{66ca5601-791e-4b90-b146-43d5b03a8493}</Project>
       <Name>Corely.Sage300HH2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LibPostalNet\LibPostalNet.csproj">
-      <Project>{7154a21b-b8a8-4a1f-a1db-078c1f1b600e}</Project>
-      <Name>LibPostalNet</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
